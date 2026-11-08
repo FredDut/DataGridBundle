@@ -1,6 +1,0 @@
-services:
-    _defaults: { autowire: true, autoconfigure: true }
-    App\: { resource: '../src/' }
-    app.grid_bulk_activate: { class: App\DataGrid\Bulk\SetUserActiveBulkAction, arguments: { $active: true }, tags: ['app.grid_bulk_action'] }
-    app.grid_bulk_deactivate: { class: App\DataGrid\Bulk\SetUserActiveBulkAction, arguments: { $active: false }, tags: ['app.grid_bulk_action'] }
-    App\DataGrid\Bulk\UserBulkActionRegistry: { arguments: { $actions: !tagged_iterator app.grid_bulk_action } }

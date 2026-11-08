@@ -1,2 +1,0 @@
-<?php
-declare(strict_types=1); namespace App\DataGrid\Bulk; final class UserBulkActionRegistry {private array $actions=[];/** @param iterable<BulkActionInterface> $actions */public function __construct(iterable $actions){foreach($actions as $a)$this->actions[$a->name()]=$a;} public function get(string $name):BulkActionInterface{return $this->actions[$name]??throw new \InvalidArgumentException('Unknown bulk action.');}}
